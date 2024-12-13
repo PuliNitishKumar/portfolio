@@ -1,0 +1,544 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+  cursor: pointer; /* Ensures the cursor changes to a pointer */
+}
+
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b; /* Dark background */
+    color: #f5f5f5; /* Light text */
+}
+
+/* Animation for floating effect */
+@keyframes floatIn {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    background-color: #1b1b1b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatIn 2s ease-out;
+}
+
+main.fixed {
+    position: fixed;
+    top: 100px; /* Adjust the top position */
+    left: 200px;
+    width: calc(100% - 250px);
+    z-index: 10;
+}
+
+
+main:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.content-section {
+    scroll-margin-top: 50px; /* Match or slightly exceed the height of the nav bar */
+}
+
+
+.content-section {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #1b1b1b;
+    border-bottom: 1px solid #333;
+}
+
+
+
+/* Left Sidebar */
+.nav-left {
+    width: 200px;
+    background-color: #1b1b1b;
+    color: #f5f5f5;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-left:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.logo-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1b1b1b;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+/* Sidebar Buttons */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 10px;
+}
+
+.circle-button {
+    width: 60px;
+    height: 60px;
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.circle-button.active {
+    background-color: #f5f5f5;
+    color: #2c2c2c; 
+}
+
+.connector {
+    width: 2px;
+    height: 15px;
+    background-color: #f5f5f5;
+}
+
+/* Top Navigation */
+.nav-top {
+    background-color: #1b1b1b;
+    height: 80px;
+    width: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 200px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatIn 1.5s ease-out;
+}
+
+.nav-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.top-nav-button {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+
+/* About Section */
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-content h1 {
+    margin-bottom: 30px;
+    color: #f5f5f5;
+    font-size: 2.5rem; /* Larger header */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600; /* Bold font */
+}
+
+.about-content p {
+    margin-bottom: 30px;
+    font-size: 1.2rem; /* Larger paragraph font */
+    line-height: 1.6; /* Improved readability */
+    color: #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic; /* Italic text */
+}
+
+.about-content p span {
+    display: block;
+    margin-top: 10px;
+    color: #f5f5f5;
+    font-weight: 500; /* Highlighting specific text */
+}
+
+.about-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #f5f5f5;
+    margin-top: 20px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b; /* Dark background */
+    color: #f5f5f5; /* Light text */
+}
+
+
+/* Experience Section */
+        #Exp {
+            padding: 20px;
+            background-color: #1b1b1b;
+        }
+
+        #Exp h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f5f5f5;
+        }
+
+        .experience-details {
+            margin-bottom: 40px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .experience-details strong {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .experience-details em {
+            font-size: 1rem;
+            color: #ccc;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .experience-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .experience-details ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Link Styles */
+        #Exp a {
+            color: #1e90ff; /* Light blue color for links */
+            text-decoration: none; /* Remove underline by default */
+            transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+        }
+
+        #Exp a:hover {
+            color: #32cd32; /* Change to cyan on hover */
+            text-decoration: underline; /* Add underline on hover */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transform: scale(1.1); /* Slightly enlarge the link on hover */
+        }
+
+        #Exp a:active {
+            color: #ff4500; /* Change color to orange when the link is clicked */
+        }
+
+        #Exp .video-link, #Exp .certificate-link {
+            display: inline-block;
+            z-index: 100;
+            position: relative;
+            pointer-events: auto;
+            padding: 10px 15px;
+            background-color: #444; /* Dark gray background for buttons */
+            border-radius: 5px;
+            text-align: center;
+            color: white; /* White text */
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+        }
+
+        #Exp .video-link:hover, #Exp .certificate-link:hover {
+            background-color: #888; /* Lighten background on hover */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transform: translateY(-3px); /* Slightly lift the button */
+            pointer-events: auto !important;
+        }
+
+        #Exp .video-link:active, #Exp .certificate-link:active {
+            background-color: #555; /* Darker background on click */
+            transform: translateY(0); /* Reset lift effect */
+        }
+/* Skills Section */
+#skills {
+    min-height: 80vh;
+    padding: 50px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+    animation: floatIn 1.5s ease-out;
+}
+
+#skills h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.skills-category {
+    margin-bottom: 30px;
+}
+
+.skills-category h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Updated color */
+    border-bottom: 2px solid #ffffff;
+}
+
+.skills-category ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color: #ffffff; /* Updated color */
+}
+
+.skills-category li {
+    margin-bottom: 5px;
+    color: #ffffff; /* Updated color */
+}
+
+
+/*projects section */
+/* Flexbox layout for projects */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.project-card {
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%; /* Adjust this to fit cards as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: #32cd32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Certifications Section */
+#certifications {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certification-container {
+    display: flex;
+    flex-direction: column; /* Arrange items in a single column */
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px; /* Add space between certifications */
+    width: 100%; /* Make sure the container spans the full width */
+}
+
+.certification-card {
+    background-color: #1e1e1e; /* Dark background for the card */
+    border: 1px solid #333; /* Border for better visibility */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Make the card take the full width of the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.certification-card h2 {
+    font-size: 1.8em;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.certification-card p {
+    color: white;
+    line-height: 1.6em;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.certification-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.certification-card ul li {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #444; /* Default button background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.certificate-link:hover {
+    background-color: white; /* Green background on hover */
+    color: #32cd32; /* White text color when hovered */
+    text-decoration: none; /* Optional: remove underline on hover */
+}
+
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.contact-info {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f5f5f5;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #f5f5f5;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-item a {
+    color: #32cd32; /* Lime green */
+    text-decoration: none; /* Remove underline if desired */
+    transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.contact-item a:hover {
+    color: #228b22; /* Dark green on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+
